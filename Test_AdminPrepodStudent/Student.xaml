@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Test_AdminPrepodStudent.Student"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Test_AdminPrepodStudent"
+             mc:Ignorable="d" Opacity="1" Loaded="UserControl_Loaded"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="650" d:DesignWidth="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="989*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Button Content="Пройти тест" HorizontalAlignment="Stretch" Margin="10,235,10.2,0" VerticalAlignment="Top"  Height="80" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Click="Button_Click"/>
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#B225273E" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="16" Content="Студент" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="191" Height="29" FontWeight="Bold"/>
+            <Label Name="lab_fam" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#B225273E" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="16" Content="Фамилия" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="191" Height="29" FontWeight="Bold" FontStyle="Italic"/>
+            <Label Name="lab_ima" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#B225273E" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="16" Content="Имя" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="191" Height="29" FontWeight="Bold" FontStyle="Italic"/>
+            <Label Name="lab_otch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#B225273E" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="16" Content="Отчество" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="191" Height="29" FontWeight="Bold" FontStyle="Italic"/>
+            <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,320,10.2,0" VerticalAlignment="Top" Height="80" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" Click="Button_Click_3" >
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Height="54" Text="Просмотреть результаты"/>
+            </Button>
+            <Label x:Name="gr" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#B225273E" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="16" Content="Группа" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="191" Height="29" FontWeight="Bold" FontStyle="Italic"/>
+        </Grid>
+        <ContentControl x:Name="control" HorizontalAlignment="Center" Margin="211,0,0,-0.4" VerticalAlignment="Center" Height="650" Grid.ColumnSpan="2" Width="989"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="171,19,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Height="29" Click="Button_Click_4">
+            <Button.Background>
+                <ImageBrush ImageSource="cogwheel_77971.png"/>
+            </Button.Background>
+
+        </Button>
+
+    </Grid>
+</UserControl>

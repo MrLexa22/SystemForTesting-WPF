@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Test_AdminPrepodStudent.Prepodavatel_Controls.CopyTests"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Test_AdminPrepodStudent.Admin" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="650" d:DesignWidth="989" Background="#7F25273E">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,-1,-0.2,0.4">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF25273E" Opacity="0.8"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дублирование тестов" VerticalAlignment="Center"  FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans Thin" FontSize="36" FontWeight="Thin" Foreground="White"/>
+        </Grid>
+
+        <Grid Margin="0,70,-0.2,457.6" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,-3,-0.2,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF25273E"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Название:" HorizontalAlignment="Left" Margin="7.6,65,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+            <ComboBox MaxDropDownHeight="150" materialDesign:HintAssist.Hint="Название теста откуда тест" x:Name="login" HorizontalAlignment="Stretch" 
+                Height="38" VerticalAlignment="Top" Margin="140.6,63,34.8,0" 
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"
+                          >
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#FF25273E" Opacity="0.8"/>
+                </ComboBox.Resources>
+            </ComboBox>
+
+
+            <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Группа:" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top" Width="98"/>
+            <ComboBox MaxDropDownHeight="150" materialDesign:HintAssist.Hint="Группа откуда тест" x:Name="grup" HorizontalAlignment="Stretch" 
+                    Height="38" VerticalAlignment="Top" Margin="132,21,10.4,0" 
+                    FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                    FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0"
+                    SelectionChanged="grup_SelectionChanged">
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#FF25273E" Opacity="0.8"/>
+                </ComboBox.Resources>
+            </ComboBox>
+            <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Дисциплина:" HorizontalAlignment="Left" Margin="9.6,21,0,0" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+            <ComboBox MaxDropDownHeight="150" materialDesign:HintAssist.Hint="Дисциплина откуда тест" x:Name="predmet" HorizontalAlignment="Stretch" 
+                Height="38" VerticalAlignment="Top" Margin="161.6,20,34.8,0" 
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}" SelectionChanged="predmet_SelectionChanged"
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"
+                          >
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#FF25273E" Opacity="0.8"/>
+                </ComboBox.Resources>
+            </ComboBox>
+            <Button Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" x:Name="create" Content="Далее" HorizontalAlignment="Left" Height="Auto" Margin="30,71,0,10" Width="206" Click="create_Click"/>
+        </Grid>
+
+        <Grid Name="questions" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="123" Margin="0,119.6,-0.2,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="123.2"/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FF25273E" Margin="0,0,0,0.2" Name="next_shag">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Background="#B225273E" BorderBrush="Black" Foreground="#FFD04242" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" x:Name="create_Copy" Content="Завершить" HorizontalAlignment="Left" Height="Auto" Margin="27,73,0,10" Width="206" Click="create_Copy_Click"/>
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Группа:" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Width="98"/>
+                <ComboBox MaxDropDownHeight="150" materialDesign:HintAssist.Hint="Группа куда копировать тест" x:Name="grup_Copy" HorizontalAlignment="Stretch" 
+                Height="38" VerticalAlignment="Top" Margin="130,10,12.4,0" SelectionChanged="grup_Copy_SelectionChanged"
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0"
+                          >
+                    <ComboBox.Resources>
+                        <SolidColorBrush x:Key="MaterialDesignPaper" Color="#FF25273E" Opacity="0.8"/>
+                    </ComboBox.Resources>
+                </ComboBox>
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Дисциплина:" HorizontalAlignment="Left" Margin="9.6,10,0,0" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+                <ComboBox MaxDropDownHeight="150" materialDesign:HintAssist.Hint="Дисциплина" x:Name="predmet_Copy" HorizontalAlignment="Stretch" 
+                Height="38" VerticalAlignment="Top" Margin="166.6,10,29.8,0" SelectionChanged="predmet_Copy_SelectionChanged"
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}" 
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"
+                          >
+                    <ComboBox.Resources>
+                        <SolidColorBrush x:Key="MaterialDesignPaper" Color="#FF25273E" Opacity="0.8"/>
+                    </ComboBox.Resources>
+                </ComboBox>
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Название:" HorizontalAlignment="Left" Margin="9.6,52,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+                <TextBox materialDesign:HintAssist.Hint="Название теста" x:Name="login_Copy" HorizontalAlignment="Stretch" 
+                Height="38" VerticalAlignment="Top" Margin="145.6,53,29.8,0" 
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"/>
+                <Button Background="#B225273E" BorderBrush="Black" Foreground="#FFCFD042" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" x:Name="create_Copy1" Content="Отменить" HorizontalAlignment="Left" Height="Auto" Margin="312,73,0,10" Width="151" Click="create_Copy1_Click"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

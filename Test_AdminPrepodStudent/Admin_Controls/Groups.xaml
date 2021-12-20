@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Test_AdminPrepodStudent.Admin_Controls.Groups"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Loaded="UserControl_Loaded"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Test_AdminPrepodStudent.Admin_Controls" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="989">
+    <Grid>
+        <Grid Margin="0,0,-0.2,569.6">
+            <Rectangle HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="989" Margin="0,-1,0,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF25273E" Opacity="0.8"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button Content="Добавить" HorizontalAlignment="Left" MinHeight="50" Margin="20,10,10,10" VerticalAlignment="Stretch" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Группы системы МЦКО" VerticalAlignment="Center"  FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans Thin" FontSize="36" FontWeight="Thin" Foreground="White"/>
+        </Grid>
+
+        <DataGrid x:Name="Polzovateli" Background="#FF25273E" HorizontalAlignment="Left" Height="570" Opacity="0.9"
+                  Margin="0,80,-0.2,-0.4" VerticalAlignment="Top" Width="989" CanUserDeleteRows="False" IsReadOnly="True" CanUserAddRows="False" 
+                  CanUserResizeRows="True" CanUserResizeColumns="False" Foreground="#DDFFFFFF"
+                  SelectionChanged="Polzovateli_SelectionChanged" SelectionMode="Extended" SelectionUnit="FullRow"
+                  materialDesign:ThemeAssist.Theme="Dark" Style="{DynamicResource MaterialDesignDataGrid}" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="FontFamily" Value="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans Thin"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Группа" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Nazvanie}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Количесвто учащихся"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Kolvo}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

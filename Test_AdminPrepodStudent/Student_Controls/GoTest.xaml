@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Test_AdminPrepodStudent.Student_Controls.GoTest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Test_AdminPrepodStudent.Admin" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="650" d:DesignWidth="989" Background="#7F25273E">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,-1,-0.2,0.4">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF25273E" Opacity="0.8"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="txt" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Выберите тест" VerticalAlignment="Center"  FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans Thin" FontSize="36" FontWeight="Thin" Foreground="White"/>
+        </Grid>
+
+        <DataGrid x:Name="Testi" Visibility="Visible" Background="#FF25273E" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0.9"
+                  CanUserDeleteRows="False" IsReadOnly="True" CanUserAddRows="False" SelectedValuePath="path_to_test"
+                  CanUserResizeRows="True" CanUserResizeColumns="False" Foreground="#DDFFFFFF" Grid.Row="1" MouseDoubleClick="Testi_MouseDoubleClick"
+                  SelectionMode="Extended" SelectionUnit="FullRow"
+                  materialDesign:ThemeAssist.Theme="Dark" Style="{DynamicResource MaterialDesignDataGrid}" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="FontFamily" Value="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans Thin"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Название теста" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=NazvTesta}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Дисциплина"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Predmet}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Преподаватель"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Prepod}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Статус"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Status}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="1" Name="te" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,-3,-0.2,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FF25273E"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Название:" HorizontalAlignment="Left" Margin="7.6,65,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+                <TextBlock  materialDesign:HintAssist.Hint="Название теста" x:Name="nazt" HorizontalAlignment="Stretch" 
+                Height="30" VerticalAlignment="Top" Margin="140.6,71,34.8,0" 
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}" 
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"/>
+
+
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Группа:" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top" Width="98"/>
+                <TextBlock materialDesign:HintAssist.Hint="Группа" x:Name="grup" HorizontalAlignment="Stretch" 
+                    Height="28" VerticalAlignment="Top" Margin="127,25,15.4,0" 
+                    FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                    FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0"/>
+
+                <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Дисциплина:" HorizontalAlignment="Left" Margin="9.6,21,0,0" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+                <TextBlock materialDesign:HintAssist.Hint="Дисциплина" x:Name="predmet" HorizontalAlignment="Stretch" 
+                Height="33" VerticalAlignment="Top" Margin="161.6,25,34.8,0" 
+                FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" 
+                FontSize="24" Foreground="#FF42AFD0" Background="{x:Null}"
+                materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Grid.Column="1"/>
+
+                <Button Background="#B225273E" BorderBrush="Black" Foreground="#FFD04242" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" x:Name="create" Content="Завершить тест" HorizontalAlignment="Left" Height="Auto" Margin="30,71,0,10" Width="206" Click="create_Click"/>
+            </Grid>
+
+            <Grid Name="questions" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#FF25273E" Margin="0,0,-0.2,-5" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Width="375" HorizontalAlignment="Center" x:Name="nazv" materialDesign:HintAssist.Hint="Введите название вопроса" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Foreground="#FF42AFD0" Margin="223,10,390.8,47" Grid.ColumnSpan="2" Height="43"/>
+                    <Button x:Name="zaver" Grid.Column="1" Margin="186.6,3,40.8,61" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Ответить на вопрос" Height="Auto" Click="zaver_Click"/>
+                    <Label Name="vope" Content="Вопрос №1" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="213"/>
+                    <TextBlock Width="127" HorizontalAlignment="Right" x:Name="ball" materialDesign:HintAssist.Hint="Баллы" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Foreground="#FF42AFD0" Margin="0,60,266.4,13" Height="32"/>
+                    <Label Background="#FF25273E" Content="Список вопросов" FontSize="28" Foreground="#FF42AFD0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,99,0,-38" VerticalAlignment="Top" Width="236" Height="44"/>
+                    <Label Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Content="Баллы:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="86"/>
+                </Grid>
+
+
+                <ListBox MouseDoubleClick="voprosi_MouseDoubleClick" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="22" x:Name="voprosi" Background="#FF25273E" HorizontalAlignment="Left" Height="313" Margin="0,43,0,-356" VerticalAlignment="Top" Width="236" Grid.Row="1" SelectedValuePath="Path_toTest" DisplayMemberPath="nomer">
+
+                </ListBox>
+
+                <Grid Visibility="Hidden" Background="#FF25273E" Grid.Row="1" VerticalAlignment="Stretch" Name="tip_one" HorizontalAlignment="Stretch" Margin="236,0,-0.2,-356">
+                    <RadioButton x:Name="tip_one_1" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,80,0,0"/>
+                    <RadioButton x:Name="tip_one_2" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,129,0,0"/>
+                    <RadioButton x:Name="tip_one_3" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,178,0,0"/>
+                    <RadioButton x:Name="tip_one_4" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,227,0,0"/>
+                    <TextBlock x:Name="tip_one_1_1" materialDesign:HintAssist.Hint="Ответ 1" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="22" Margin="136,76,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0" />
+                    <TextBlock x:Name="tip_one_1_2" materialDesign:HintAssist.Hint="Ответ 2" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="24" Margin="136,123,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                    <TextBlock x:Name="tip_one_1_3" materialDesign:HintAssist.Hint="Ответ 3" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="25" Margin="136,170,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                    <TextBlock x:Name="tip_one_1_4" materialDesign:HintAssist.Hint="Ответ 4" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="25" Margin="136,220,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                </Grid>
+
+                <Grid Visibility="Hidden" Background="#FF25273E" Grid.Row="1" VerticalAlignment="Stretch" Name="tip_two" HorizontalAlignment="Stretch" Margin="236,0,-0.2,-356">
+                    <CheckBox x:Name="tip_two_1" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,80,0,0"/>
+                    <CheckBox x:Name="tip_two_2" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,129,0,0"/>
+                    <CheckBox x:Name="tip_two_3" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,178,0,0"/>
+                    <CheckBox x:Name="tip_two_4" FontSize="32" Foreground="#FF42AFD0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,227,0,0"/>
+                    <TextBlock x:Name="tip_two_1_1" materialDesign:HintAssist.Hint="Ответ 1" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="24" Margin="136,74,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                    <TextBlock x:Name="tip_two_1_2" materialDesign:HintAssist.Hint="Ответ 2" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="24" Margin="136,123,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="tip_two_1_3" materialDesign:HintAssist.Hint="Ответ 3" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="24" Margin="136,171,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                    <TextBlock x:Name="tip_two_1_4" materialDesign:HintAssist.Hint="Ответ 4" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="23" Margin="136,222,162,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" Foreground="#FF42AFD0"/>
+                </Grid>
+
+                <Grid Visibility="Hidden" Background="#FF25273E" Grid.Row="1" VerticalAlignment="Stretch" Name="tip_tri" HorizontalAlignment="Stretch" Margin="236,0,-0.2,-356">
+                    <TextBox x:Name="tip_tri_1_1" materialDesign:HintAssist.Hint="Текстовый ответ" materialDesign:TextFieldAssist.UnderlineBrush="#FF42AFD0" Height="46" Margin="58,129,51,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="20" VerticalContentAlignment="Center" Foreground="#FF42AFD0" CaretBrush="#FF42AFD0"/>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

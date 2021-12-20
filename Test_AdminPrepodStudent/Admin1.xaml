@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Test_AdminPrepodStudent.Admin1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Test_AdminPrepodStudent"
+             mc:Ignorable="d" Opacity="1"
+             d:DesignHeight="650" d:DesignWidth="1200" Loaded="MainWindow_OnLoaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="989*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Button Content="Пользователи" HorizontalAlignment="Stretch" Margin="10,182,10,0" VerticalAlignment="Top"  Height="80" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Click="Button_Click_1"/>
+            <Button Content="Группы" HorizontalAlignment="Stretch" Margin="10,267,10,0" VerticalAlignment="Top" Height="80" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Click="Button_Click"/>
+            <Button Content="Дисциплины" HorizontalAlignment="Stretch" Margin="10,352,10,0" VerticalAlignment="Top" Height="80" Background="#B225273E" BorderBrush="Black" Foreground="#FF42AFD0" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontSize="24" Click="Button_Click_2" />
+            <Rectangle HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="191">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="AssestAuthentication/admin.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <ContentControl x:Name="control" HorizontalAlignment="Center" Margin="211,0,0,-0.4" VerticalAlignment="Center" Height="650" Grid.ColumnSpan="2" Width="989"/>
+
+
+    </Grid>
+</UserControl>

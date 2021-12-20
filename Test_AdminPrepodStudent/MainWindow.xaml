@@ -1,0 +1,22 @@
+﻿<Window x:Class="Test_AdminPrepodStudent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_AdminPrepodStudent"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="700" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Image Source="AssestAuthentication/wallpaper-4k-ultra-hd-background-image-reflection-blur-art-s.jpg" Stretch="Fill"/>
+        <Rectangle x:Name="rec" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="1200">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF25273E" Opacity="0.8"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="X" HorizontalAlignment="Left" Margin="1118,0,0,0" VerticalAlignment="Top" Width="82" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="/Test_AdminPrepodStudent;component/AssestAuthentication/#Product Sans" FontWeight="Thin" FontSize="24" Click="Button_Click"/>
+        <ContentControl Content="" Name="contentControl" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center" Height="650" Width="1200"/>
+        <Button x:Name="ext" Visibility="Hidden" Content="Выход из аккаунта"  Background="#FF25273E" BorderBrush="{x:Null}" FontSize="14" Height="32" FontFamily="Product Sans" FontWeight="Bold" Foreground="#FFD02525" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click_2"/>
+    </Grid>
+</Window>
